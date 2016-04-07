@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flatmates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Image</th>
+      <th>Leaving out</th>
+      <th>Ariiving</th>
+      <th>Duties</th>
+      <th>Charges</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flatmates.each do |flatmate| %>
+      <tr>
+        <td><%= flatmate.firstname %></td>
+        <td><%= flatmate.lastname %></td>
+        <td><%= flatmate.image %></td>
+        <td><%= flatmate.leaving_out %></td>
+        <td><%= flatmate.ariiving %></td>
+        <td><%= flatmate.duties %></td>
+        <td><%= flatmate.charges %></td>
+        <td><%= link_to 'Show', flatmate %></td>
+        <td><%= link_to 'Edit', edit_flatmate_path(flatmate) %></td>
+        <td><%= link_to 'Destroy', flatmate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flatmate', new_flatmate_path %>

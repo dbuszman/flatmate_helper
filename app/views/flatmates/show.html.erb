@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @flatmate.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @flatmate.lastname %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @flatmate.image %>
+</p>
+
+<p>
+  <strong>Leaving out:</strong>
+  <%= @flatmate.leaving_out %>
+</p>
+
+<p>
+  <strong>Ariiving:</strong>
+  <%= @flatmate.ariiving %>
+</p>
+
+<p>
+  <strong>Duties:</strong>
+  <%= @flatmate.duties %>
+</p>
+
+<p>
+  <strong>Charges:</strong>
+  <%= @flatmate.charges %>
+</p>
+
+<%= link_to 'Edit', edit_flatmate_path(@flatmate) %> |
+<%= link_to 'Back', flatmates_path %>
