@@ -3,7 +3,6 @@ class CreateFlatmates < ActiveRecord::Migration[5.0]
     create_table :flatmates do |t|
       t.string :firstname
       t.string :lastname
-      t.binary :image
       t.time :leaving_out
       t.time :ariiving
       t.text :duties
