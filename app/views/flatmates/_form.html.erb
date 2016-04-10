@@ -12,41 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname, "Firstname" %>
+    <%= f.label :firstname, "Firstname" %></br>
     <%= f.text_field :firstname %>
   </div>
 
   <div class="field">
-    <%= f.label :lastname, "Lastname"%>
+    <%= f.label :lastname, "Lastname"%></br>
     <%= f.text_field :lastname %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "Photo"%>
+    <%= f.label :image, "Photo"%></br>
     <%= f.file_field :image%>
   </div>
 
   <div class="field">
-    <%= f.label :leaving_out, "Common leaving out time"%>
+    <%= f.label :leaving_out, "Common leaving out time"%></br>
     <%= f.time_select :leaving_out %>
   </div>
 
   <div class="field">
-    <%= f.label :ariiving, "Common arriving time"%>
+    <%= f.label :ariiving, "Common arriving time"%></br>
     <%= f.time_select :ariiving %>
   </div>
 
   <div class="field">
-    <%= f.label :duties, "Duties"%>
+    <%= f.label :duties, "Duties"%></br>
     <%= f.text_area :duties %>
   </div>
 
   <div class="field">
-    <%= f.label :charges, "Sum of charges"%>
+    <%= f.label :charges, "Sum of charges"%></br>
     <%= f.number_field :charges %>
   </div>
 
-  <div class="actions">
+  <div class="actions"></br>
     <%= f.submit %>
   </div>
 <% end %>
