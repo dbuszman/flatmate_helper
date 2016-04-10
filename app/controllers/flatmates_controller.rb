@@ -4,7 +4,7 @@ class FlatmatesController < ApplicationController
   # GET /flatmates
   # GET /flatmates.json
   def index
-    @flatmates = Flatmate.all
+      @flatmates = Flatmate.all.order('created_at DESC').page(params[:page]).per_page(6)
   end
 
   # GET /flatmates/1
@@ -14,7 +14,11 @@ class FlatmatesController < ApplicationController
 
   # GET /flatmates/new
   def new
-    @flatmate = Flatmate.new
+    if user_signed_in?
+      @flatmate = Flatmate.new
+    else
+      redirect_to new_user_session_path, :notice => "This page is only available to logged-in users"
+    end
   end
 
   # GET /flatmates/1/edit
@@ -40,6 +44,7 @@ class FlatmatesController < ApplicationController
   # PATCH/PUT /flatmates/1
   # PATCH/PUT /flatmates/1.json
   def update
+    if user_signed_in?
     respond_to do |format|
       if @flatmate.update(flatmate_params)
         format.html { redirect_to @flatmate, notice: 'Flatmate was successfully updated.' }
@@ -49,15 +54,22 @@ class FlatmatesController < ApplicationController
         format.json { render json: @flatmate.errors, status: :unprocessable_entity }
       end
     end
+    else
+      redirect_to new_user_session_path, :notice => "This page is only available to logged-in users"
+    end
   end
 
   # DELETE /flatmates/1
   # DELETE /flatmates/1.json
   def destroy
+    if user_signed_in?
     @flatmate.destroy
     respond_to do |format|
       format.html { redirect_to flatmates_url, notice: 'Flatmate was successfully destroyed.' }
       format.json { head :no_content }
+    end
+    else
+      redirect_to new_user_session_path, :notice => "This page is only available to logged-in users"
     end
   end
 

@@ -2,6 +2,10 @@
 
 <h1>Flatmates</h1>
 
+<%= link_to 'New Flatmate', new_flatmate_path %>
+
+</br></br>
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -20,8 +24,8 @@
       <tr>
         <td><%= flatmate.firstname %></td>
         <td><%= flatmate.lastname %></td>
-        <td><%= flatmate.leaving_out %></td>
-        <td><%= flatmate.ariiving %></td>
+        <td><%= flatmate.leaving_out.strftime("%H:%M") %></td>
+        <td><%= flatmate.ariiving.strftime("%H:%M") %></td>
         <td><%= flatmate.duties %></td>
         <td><%= flatmate.charges %></td>
         <td><%= link_to 'Show', flatmate %></td>
@@ -34,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Flatmate', new_flatmate_path %>
+  <%= will_paginate %>

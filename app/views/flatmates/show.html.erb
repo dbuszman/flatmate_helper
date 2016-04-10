@@ -11,22 +11,22 @@
 </p>
 
 <p>
-  <strong>Photo:</strong>
+  <strong>Photo:</strong></br>
   <%= image_tag @flatmate.image.url(:medium) %>
 </p>
 
 <p>
   <strong>Common leaving out time:</strong>
-  <%= @flatmate.leaving_out %>
+  <%= @flatmate.leaving_out.strftime("%H:%M") %>
 </p>
 
 <p>
   <strong>Common arriving time:</strong>
-  <%= @flatmate.ariiving %>
+  <%= @flatmate.ariiving.strftime("%H:%M") %>
 </p>
 
 <p>
-  <strong>Duties:</strong>
+  <strong>Duties:</strong></br>
   <%= @flatmate.duties %>
 </p>
 
